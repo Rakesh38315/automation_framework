@@ -4,7 +4,7 @@
   <test thread-count="5" name="Tests(failed)">
     <parameter name="password" value="Sarita@123"/>
     <parameter name="platformVersion" value="7.0"/>
-    <parameter name="userName" value="rakesh38315@gmail.com"/>
+    <parameter name="userName" value="rakesh38325@gmail.com"/>
     <parameter name="deviceName" value="SM-N9208"/>
     <groups>
       <run>
@@ -12,17 +12,17 @@
       </run>
     </groups>
     <classes>
-      <class name="assignment.tests.Tests">
+      <class name="demo.tests.Tests">
         <methods>
+          <include name="productAddToCart"/>
+          <include name="verifyProductPriceInCart"/>
+          <include name="verifyProductSizeInCart"/>
           <include name="init"/>
           <include name="productSearch"/>
           <include name="removeProductFromCart"/>
-          <include name="verifyProductSizeInCart"/>
-          <include name="productAddToCart"/>
           <include name="verifyProductNameInCart"/>
-          <include name="verifyProductPriceInCart"/>
         </methods>
-      </class> <!-- assignment.tests.Tests -->
+      </class> <!-- demo.tests.Tests -->
     </classes>
   </test> <!-- Tests(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->

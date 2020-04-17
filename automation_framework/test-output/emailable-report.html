@@ -9,20 +9,20 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Test Suite</th></tr>
-<tr><td><a href="#t0">Tests</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">6</td><td class="num">106,293</td><td>tests</td><td></td></tr>
+<tr><td><a href="#t0">Tests</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">6</td><td class="num">103,951</td><td>tests</td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Tests &#8212; failed</th></tr><tr class="failedeven"><td rowspan="6">assignment.tests.Tests</td><td><a href="#m0">productAddToCart</a></td><td rowspan="1">1587104820313</td><td rowspan="1">10158</td></tr><tr class="failedeven"><td><a href="#m1">productSearch</a></td><td rowspan="1">1587104810007</td><td rowspan="1">10297</td></tr><tr class="failedeven"><td><a href="#m2">removeProductFromCart</a></td><td rowspan="1">1587104861214</td><td rowspan="1">10450</td></tr><tr class="failedeven"><td><a href="#m3">verifyProductNameInCart</a></td><td rowspan="1">1587104830473</td><td rowspan="1">10453</td></tr><tr class="failedeven"><td><a href="#m4">verifyProductPriceInCart</a></td><td rowspan="1">1587104850996</td><td rowspan="1">10217</td></tr><tr class="failedeven"><td><a href="#m5">verifyProductSizeInCart</a></td><td rowspan="1">1587104840927</td><td rowspan="1">10067</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Tests &#8212; failed</th></tr><tr class="failedeven"><td rowspan="6">demo.tests.Tests</td><td><a href="#m0">productAddToCart</a></td><td rowspan="1">1587147744570</td><td rowspan="1">10468</td></tr><tr class="failedeven"><td><a href="#m1">productSearch</a></td><td rowspan="1">1587147734401</td><td rowspan="1">10163</td></tr><tr class="failedeven"><td><a href="#m2">removeProductFromCart</a></td><td rowspan="1">1587147792468</td><td rowspan="1">10570</td></tr><tr class="failedeven"><td><a href="#m3">verifyProductNameInCart</a></td><td rowspan="1">1587147755040</td><td rowspan="1">12900</td></tr><tr class="failedeven"><td><a href="#m4">verifyProductPriceInCart</a></td><td rowspan="1">1587147778974</td><td rowspan="1">13492</td></tr><tr class="failedeven"><td><a href="#m5">verifyProductSizeInCart</a></td><td rowspan="1">1587147767942</td><td rowspan="1">11030</td></tr></tbody>
 </table>
-<h2>Tests</h2><h3 id="m0">assignment.tests.Tests#productAddToCart</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at assignment.tests.Tests.productAddToCart(Tests.java:30)
+<h2>Tests</h2><h3 id="m0">demo.tests.Tests#productAddToCart</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at demo.tests.Tests.productAddToCart(Tests.java:29)
 ... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">assignment.tests.Tests#productSearch</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: search_widget_textbox})
+<h3 id="m1">demo.tests.Tests#productSearch</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: search_widget_textbox})
 	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
 	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:60)
 	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.click(&lt;generated&gt;)
-	at assignment.pages.ProductSearch.searchProduct(ProductSearch.java:40)
-	at assignment.tests.Tests.productSearch(Tests.java:25)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@455351c4 (tried for 10 second(s) with 500 milliseconds interval)
+	at demo.pages.ProductSearch.searchProduct(ProductSearch.java:40)
+	at demo.tests.Tests.productSearch(Tests.java:24)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@29876704 (tried for 10 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
 	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
@@ -49,17 +49,17 @@ Driver info: driver.version: AndroidDriver
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
 	... 31 more
 ... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">assignment.tests.Tests#removeProductFromCart</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at assignment.tests.Tests.removeProductFromCart(Tests.java:55)
+<h3 id="m2">demo.tests.Tests#removeProductFromCart</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at demo.tests.Tests.removeProductFromCart(Tests.java:54)
 ... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">assignment.tests.Tests#verifyProductNameInCart</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at assignment.tests.Tests.verifyProductNameInCart(Tests.java:38)
+<h3 id="m3">demo.tests.Tests#verifyProductNameInCart</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at demo.tests.Tests.verifyProductNameInCart(Tests.java:37)
 ... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">assignment.tests.Tests#verifyProductPriceInCart</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at assignment.tests.Tests.verifyProductPriceInCart(Tests.java:50)
+<h3 id="m4">demo.tests.Tests#verifyProductPriceInCart</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at demo.tests.Tests.verifyProductPriceInCart(Tests.java:49)
 ... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">assignment.tests.Tests#verifyProductSizeInCart</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at assignment.tests.Tests.verifyProductSizeInCart(Tests.java:44)
+<h3 id="m5">demo.tests.Tests#verifyProductSizeInCart</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at demo.tests.Tests.verifyProductSizeInCart(Tests.java:43)
 ... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

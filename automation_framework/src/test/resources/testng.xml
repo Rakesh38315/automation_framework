@@ -14,7 +14,7 @@
             </run>
         </groups>
         <packages>
-            <package name="assignment.*" />
+            <package name="demo.*" />
         </packages>
     </test>
 </suite>

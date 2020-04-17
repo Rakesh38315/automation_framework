@@ -34,6 +34,7 @@ public class SignInPage{
 	}
 	
 	public void signIn(String userName, String password) throws Exception {
+		ElementUtils.wait(2);
 		ElementUtils.safeClick(10, useEmailID);
 		emailIDTextField.setValue(userName);
 		continueButton.click();
