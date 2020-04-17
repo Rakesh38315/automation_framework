@@ -1,0 +1,56 @@
+package assignment.utils;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
+
+public class DriverFactory {
+
+	public static WebDriver driver;
+	private DesiredCapabilities capabilities;
+	private AppiumDriverLocalService service;
+	private AppiumServiceBuilder appiumServiceBuilder;
+
+	@BeforeTest(alwaysRun = true, groups = {"tests"})
+	@Parameters({"platformVersion", "deviceName", "userName", "password"})
+	public void setUp(String platformVersion, String deviceName, String userName, String password) throws Exception {
+		try {
+			appiumServiceBuilder = new AppiumServiceBuilder().withIPAddress("127.0.0.1").usingAnyFreePort();
+			service = AppiumDriverLocalService.buildService(appiumServiceBuilder);
+			service.start();
+			capabilities = new DesiredCapabilities();
+			capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+			capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
+			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
+			capabilities.setCapability("automationName", "uiautomator2");
+			capabilities.setCapability("appPackage", "com.flipkart.android");
+			capabilities.setCapability("appActivity", "com.flipkart.android.activity.HomeFragmentHolderActivity");
+			driver = new AndroidDriver<MobileElement>(service.getUrl(), capabilities);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@AfterTest(groups = {"tests"})
+	@Parameters({ "driverName" })
+	public void tearDown(String driverName) {
+		try {
+			driver.quit();
+			service.stop();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

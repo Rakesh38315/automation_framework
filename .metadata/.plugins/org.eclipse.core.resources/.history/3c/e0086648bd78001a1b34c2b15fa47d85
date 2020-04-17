@@ -1,0 +1,78 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Fluke Connect Test Suite"> 
+<!--  
+ <test name = "Team Tests Web">
+
+<parameter name = "driverName"       		value = "Web" />
+<parameter name = "browserName"      		value = "Chrome" />
+
+<parameter name = "environmentName" 	    		value = "Dev" />
+<parameter name = "url"             			value = "https://connect.dev.connect.fluke.com/" />
+
+
+<parameter name = "isSignInRequired"        	value = "false" />
+
+
+<groups>
+<run>
+<include name = "team_tests_web" />
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test> 
+-->
+
+
+<test name = "Team Test Android" preserve-order="false">
+
+<parameter name = "platformName"      		value = "Android" />
+<parameter name = "platformVersion"   		value = "9" />
+
+<parameter name = "deviceName" 				value = "ANE-AL00" />
+<parameter name = "driverName" 				value = "Android" />
+
+<parameter name = "app" 	  	            		value = "/Users/flukeqa/UAF/apk/elektra.apk" />
+<parameter name =  "appPackage" 				value = "com.fluke.deviceApp" />
+<parameter name =  "appActivity" 			value = "com.fluke.deviceApp.LoginActivity" />
+
+<parameter name = "environmentName" 	   	 	value = "PreProduction" />
+
+
+<parameter name = "appInstallFlag"			value = "false"  />
+<parameter name = "handleUpgradeAlert"		value = "false"  />
+
+<parameter name = "isChangeEnvironmentRequired" 		value = "false" />
+<parameter name = "noResetFlag" 						value = "true" />
+
+<parameter name = "systemPort"				value = "8260" />
+
+<groups>
+<run>
+
+ <include name="cnx_capture_android_tests" /> 
+
+ <include name="work_order_uat" /> 
+
+<include name = "team_tests" />  
+
+<include name = "3540_UAT_tests" />
+
+</run>
+</groups>
+
+<packages>
+<package name="com.fluke.connect.app.*" />
+</packages>
+
+</test> 
+ 
+<listeners>
+<listener class-name="com.fluke.connect.app.utils.TestResultsReport" />
+</listeners>
+
+</suite>

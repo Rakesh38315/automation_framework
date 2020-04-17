@@ -1,0 +1,34 @@
+<suite name = "Test Suite">
+
+    <test name = "Tests" preserve-order="false">
+
+        <parameter name = "platformName"      		value = "Android" />
+        <parameter name = "platformVersion"   		value = "7.0" />
+        <parameter name = "deviceName" 				value = "SM-N9208" />
+
+      <!--  <parameter name = "app" 	  	            		value = "/Users/flukeqa/UAF/apk/elektra.apk" /> --> 
+        <parameter name =  "appPackage" 				value = "com.fluke.deviceApp" />
+        <parameter name =  "appActivity" 			value = "com.fluke.deviceApp.LoginActivity" />
+        <groups>
+            <run>
+
+
+                <include name = "3560_session_tests" />
+                <include name = "3560_completed_session_tests" />
+
+                <include name = "report_tests" />
+
+            </run>
+        </groups>
+
+        <packages>
+            <package name="com.fluke.connect.app.*" />
+        </packages>
+
+    </test>
+
+    <listeners>
+<listener class-name="com.fluke.connect.app.utils.TestResultsReport" />
+</listeners>
+
+</suite>

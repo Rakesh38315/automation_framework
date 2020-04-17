@@ -1,0 +1,65 @@
+package assignment.utils;
+
+
+
+public class GestureUtils {
+	private boolean isAndroidScrollableElementFound = false;
+	private boolean androidScrollFlag = false;
+	private String androidPageSourceBeforeScroll;
+	private String androidPageSourceAfterScroll;
+	public enum ScrollDirection {
+		
+	}
+	
+	public static int getScreenWidth() {
+		return DriverFactory.driver.manage().window().getSize().width;
+	}
+	
+	public static int getScreenHeight() {
+		return DriverFactory.driver.manage().window().getSize().height;
+	}
+	
+	public void setAndroidScrollFlag(String scrollText) {
+		try {
+			if (DriverFactory.driver.getPageSource().contains(scrollText))
+					isAndroidScrollableElementFound = true;
+			else
+				androidScrollFlag = true;
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean isReachedToBottom() {
+		try {
+			if (androidPageSourceBeforeScroll.equals(androidPageSourceAfterScroll))
+				androidScrollCounter++;
+			else
+				androidScrollCounter = 0;
+			if (Config.isDynamicPage) {
+				androidScrollCounter++;
+				if (androidScrollCounter == 3 || androidScrollCounter == Config.maxScrollCounterForDynamicPage)
+ 
+					return true;
+				else
+					return false;
+			} else if (Config.isScrollCountFixed) {
+				Config.maxFixedScrollCounter++;
+				if (Config.maxFixedScrollCounter >= Config.maxFixedScrollCount)
+					return true;
+				else
+					return false;
+			} else {
+				if (androidScrollCounter >= 3)
+					return true;
+				else
+					return false;
+			}
+		} catch (Throwable e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
+
+}

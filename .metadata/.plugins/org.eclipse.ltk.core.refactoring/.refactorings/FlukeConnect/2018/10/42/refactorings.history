@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ios.xml&apos; to &apos;FlukeConnect/src/test/resources&apos;&#x0A;- Original project: &apos;FlukeConnect&apos;&#x0A;- Destination element: &apos;FlukeConnect/src/test/resources&apos;&#x0A;- Original element: &apos;ios.xml&apos;" description="Copy file" destination="/src\/test\/resources" element1="src/test/resources/ios.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1539603711032" units="0" version="1.0"/>
+</session>

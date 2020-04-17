@@ -1,0 +1,28 @@
+<suite name = "Test Suite">
+
+    <test name = "Tests" preserve-order="false">
+
+        <parameter name = "platformName"      		value = "Android" />
+        <parameter name = "platformVersion"   		value = "7.0" />
+        <parameter name = "deviceName" 				value = "SM-N9208" />
+        <parameter name =  "userName" 				value = "rakesh38315@gmail.com" />
+        <parameter name =  "password" 			    value = "" />
+        <groups>
+            <run>
+
+                <include name = "tests" />
+
+            </run>
+        </groups>
+
+        <packages>
+            <package name="com.fluke.connect.app.*" />
+        </packages>
+
+    </test>
+
+    <listeners>
+<listener class-name="com.fluke.connect.app.utils.TestResultsReport" />
+</listeners>
+
+</suite>

@@ -1,0 +1,50 @@
+package assignment.tests;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import assignment.pages.ProductSearch;
+import assignment.utils.ElementUtils;
+import assignment.utils.ElementUtils.LocatorStrategy;
+import assignment.utils.FileUtil;
+
+public class Tests {
+	
+	private ProductSearch productSearch;
+	private String filePath = "./src/test/java/assignment/test_data";
+	
+	@BeforeClass(groups = "tests")
+	public void init() {
+		productSearch = new ProductSearch();
+	}
+	
+	@Test(priority = 1, groups = "tests")
+	public void productSearch() throws Exception {
+		productSearch.searchProduct(FileUtil.readFromPropertyFile(filePath, "productGroup"), FileUtil.readFromPropertyFile(filePath, "productGroup"));
+	}
+	
+	@Test(priority = 2, groups = "tests")
+	public void productAddToCart() {
+		ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT, "ADD TO CART").click();
+		ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT, "Go TO CART").click();
+	}
+	
+	@Test(priority = 3, groups = "tests")
+	public void verifyProductNameInCart() {
+		Assert.assertTrue(ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT, 
+				FileUtil.readFromPropertyFile(filePath, "productName")).isDisplayed());
+	}
+	
+	@Test(priority = 4, groups = "tests")
+	public void verifyProductSizeInCart() {
+		Assert.assertTrue(ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT, 
+				FileUtil.readFromPropertyFile(filePath, "productSize")).isDisplayed());
+	}
+	
+	@Test(priority = 5, groups = "tests")
+	public void verifyProductPriceInCart() {
+		Assert.assertTrue(ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT, 
+				FileUtil.readFromPropertyFile(filePath, "productPrice")).isDisplayed());
+	}
+
+}

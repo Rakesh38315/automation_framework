@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;getPickerLoopCount&apos; in &apos;com.connect.fluke.app.testdata.FCM&apos; to &apos;getPickerLoopCountTestVoltage&apos;&#x0A;- Original project: &apos;FlukeConnect&apos;&#x0A;- Original element: &apos;com.connect.fluke.app.testdata.FCM.getPickerLoopCount&apos;&#x0A;- Renamed element: &apos;com.connect.fluke.app.testdata.FCM.getPickerLoopCountTestVoltage&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;getPickerLoopCount&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src\/test\/java&lt;com.connect.fluke.app.testdata{FCM.java[FCM^getPickerLoopCount" name="getPickerLoopCountTestVoltage" references="true" setter="false" stamp="1537799235311" textual="false" version="1.0"/>
+</session>

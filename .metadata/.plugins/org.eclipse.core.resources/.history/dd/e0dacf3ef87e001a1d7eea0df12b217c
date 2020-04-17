@@ -1,0 +1,108 @@
+package utils;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.fluke.connect.app.functional.client.pages.HomePage;
+import com.fluke.connect.app.functional.client.pages.ServiceHatchPage;
+import com.fluke.connect.app.functional.client.pages.SignInPage;
+import com.fluke.connect.app.functional.client.pages.Switcher;
+import com.fluke.connect.app.others.SpeedTest;
+import com.fluke.connect.app.testdata.FCCM174X;
+import com.fluke.connect.app.testdata.FCCM3540;
+import com.fluke.connect.app.testdata.FCCM3550;
+import com.fluke.connect.app.testdata.FCCM3560;
+import com.fluke.connect.app.testdata.Graph;
+import com.fluke.connect.app.utils.CommonUtils;
+import com.fluke.connect.app.utils.Config;
+import com.fluke.connect.app.utils.DriverManager;
+import com.fluke.connect.app.utils.GestureUtils;
+
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
+import io.appium.java_client.service.local.flags.GeneralServerFlag;
+
+public class DriverFactory {
+	
+	 public WebDriver driver;
+	    private DesiredCapabilities capabilities;
+	    private AppiumDriverLocalService service;
+	    private AppiumServiceBuilder appiumServiceBuilder;
+
+	    @BeforeTest(groups = {"" })
+	    @Parameters({"platformName", "platformVersion", "app",  "appPackage", "appActivity", "deviceName",
+	            "driverName", "userName", "password"})
+	    public void setUp(@Optional("null") String platformName, @Optional("null") String platformVersion,
+	                      @Optional("null") String app, @Optional("null") String bundleId, @Optional("null") String appPackage,
+	                      @Optional("null") String appActivity, @Optional("null") String deviceName,
+	                      @Optional("null") String driverName, @Optional("null") String environmentName,
+	                      @Optional("null") String userName, @Optional("null") String password,
+	                      @Optional("false") Boolean isRealDevice, @Optional("true") Boolean isSignInRequired,
+	                      @Optional("null") String deviceUdid, @Optional("null") String xcodeOrgId,
+	                      @Optional("null") String xcodeSigningId, @Optional("false") Boolean isFeature,
+	                      @Optional("false") Boolean isCodeRunningOnEverettMachine, @Optional("null") String browserName,
+	                      @Optional("null") String url, @Optional("false") Boolean appInstallFlag, @Optional("true") Boolean isFCApp,
+	                      @Optional("true") Boolean handleUpgradeAlert, @Optional("no value") String testResultsReportName,
+	                      @Optional("false") Boolean appendTestResults, @Optional("false") Boolean noResetFlag,
+	                      @Optional("no value") String wdaLocalPort, @Optional("no value") String systemPort, @Optional("false") Boolean useExistingData,
+	                      @Optional("true") Boolean isChangeEnvironmentRequired, @Optional("false") Boolean isSmokeSuite, @Optional("false") Boolean relaxedSecurityFlag,
+	                      @Optional("false") Boolean useDefaultBrowser) throws Exception {
+	        try {
+	   
+	                appiumServiceBuilder = new AppiumServiceBuilder().withIPAddress("127.0.0.1").usingAnyFreePort();
+	         
+	                service = AppiumDriverLocalService.buildService(appiumServiceBuilder);
+	                service.start();
+	                capabilities = new DesiredCapabilities();
+	                capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, platformName);
+	                capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
+	                capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
+	                capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "30000");
+	                if (appInstallFlag)
+	                    capabilities.setCapability("app", app);
+	           
+	                    capabilities.setCapability("automationName", "uiautomator2");
+	                    capabilities.setCapability("appPackage", appPackage);
+	                    capabilities.setCapability("appActivity", appActivity);
+	                    capabilities.setCapability("skipUnlock", true);
+	                   
+	                    driver = new AndroidDriver<MobileElement>(service.getUrl(), capabilities);
+	                
+	                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	        }
+	                catch (Exception e) {
+	    				e.printStackTrace();
+	    			}
+	            } 
+	    
+
+	    @AfterTest(groups = {})
+		@Parameters({"driverName"})
+		public void tearDown(String driverName) {
+			try {
+		
+					driver.quit();
+					service.stop();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+}

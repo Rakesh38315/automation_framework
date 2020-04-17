@@ -1,0 +1,20 @@
+package assignment.pages;
+
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+
+public class ProductSearch {
+	
+	@AndroidFindBy(id = "search_widget_textbox")
+	private MobileElement searchContainer;
+	
+	@AndroidFindBy(id = "search_autoCompleteTextView")
+	private MobileElement searchTextField;
+	
+	@AndroidFindBy(id = "allow_button")
+	private MobileElement locationAllowButton;
+	
+	@AndroidFindBy(id = "com.android.packageinstaller:id/permission_allow_button")
+	private MobileElement locationSystemAllowButton;
+
+}

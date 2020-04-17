@@ -1,0 +1,29 @@
+package assignment.utils;
+
+import org.openqa.selenium.WebElement;
+
+
+public class ElementUtils {
+	
+	public static void wait(int seconds)
+	{
+		try 
+		{
+			Thread.sleep(1000 * seconds);
+		}
+		catch(Exception e){ }
+	}
+	
+	public static void click(int timeoutInSeconds, WebElement element) throws Exception {
+        for (int i = 0; i < timeoutInSeconds; i++) {
+            try {
+                element.click();
+                return;
+            } catch (Exception e) {
+                wait(1);
+            }
+        }
+        throw new Exception("ElementUtils.click() failed" +element);
+    }
+
+}
