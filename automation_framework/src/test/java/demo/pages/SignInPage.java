@@ -34,11 +34,13 @@ public class SignInPage{
 	}
 	
 	public void signIn(String userName, String password) throws Exception {
-		ElementUtils.wait(2);
+		ElementUtils.wait(5);
 		ElementUtils.safeClick(10, useEmailID);
 		emailIDTextField.setValue(userName);
+		ElementUtils.wait(2);
 		continueButton.click();
 		passwordField.setValue(password);
+		ElementUtils.wait(2);
 		continueButton.click();
 	}
 	

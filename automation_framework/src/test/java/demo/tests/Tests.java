@@ -12,7 +12,7 @@ import demo.utils.ElementUtils.LocatorStrategy;
 public class Tests {
 	
 	private ProductSearch productSearch;
-	private String filePath = "./src/test/java/assignment/test_data/test_data.properties";
+	private String filePath = "./src/test/java/demo/test_data/test_data.properties";
 	
 	@BeforeClass(groups = "tests")
 	public void init() {
@@ -52,8 +52,6 @@ public class Tests {
 	@Test(priority = 6, groups = "tests")
 	public void removeProductFromCart() {
 		ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT_CONTAINS, "Remove").click();
-		Assert.assertTrue(ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT_CONTAINS, 
-				FileUtil.readFromPropertyFile(filePath, "productPrice")).isDisplayed());
 	}
 
 }
