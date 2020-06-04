@@ -3,55 +3,61 @@ package demo.tests;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import demo.pages.ProductSearch;
+import demo.pages.SchedulesPage;
+import demo.utils.AndroidUtils;
 import demo.utils.ElementUtils;
-import demo.utils.FileUtil;
 import demo.utils.ElementUtils.LocatorStrategy;
+import demo.utils.FileUtil;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 
-public class Tests {
+
+public class SchedulesTests {
 	
-	private ProductSearch productSearch;
+	private SchedulesPage schedulesPage;
 	private String filePath = "./src/test/java/demo/test_data/test_data.properties";
 	
-	@BeforeClass(groups = "tests")
+	@BeforeClass(groups = "schedule_tests")
 	public void init() {
-		productSearch = new ProductSearch();
+		schedulesPage = new SchedulesPage();
 	}
 	
-	@Test(priority = 1, groups = "tests")
-	public void productSearch() throws Exception {
-		productSearch.searchProduct(FileUtil.readFromPropertyFile(filePath, "productGroup"), FileUtil.readFromPropertyFile(filePath, "productName"));
+	@Test(priority = 1, groups = "schedule_tests")
+	public void fromPortNameTest() throws Exception {
+		schedulesPage.searchSchedules(FileUtil.readFromPropertyFile(filePath, "fromCitySearch"), FileUtil.readFromPropertyFile(filePath, "fromCityPort"), 
+				FileUtil.readFromPropertyFile(filePath, "toCitySearch"), FileUtil.readFromPropertyFile(filePath, "toCityPort"));
+		Assert.assertTrue(ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT, 
+				FileUtil.readFromPropertyFile(filePath, "fromPortName")).isDisplayed());
 	}
 	
-	@Test(priority = 2, groups = "tests")
-	public void productAddToCart() {
-		ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT_CONTAINS, "CART").click();
-		ElementUtils.wait(6);
-		ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT_CONTAINS, "CART").click();
+	@Test(priority = 2, groups = "schedule_tests")
+	public void fromPortCountryTest() throws Exception {
+		Assert.assertTrue(ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT, 
+				FileUtil.readFromPropertyFile(filePath, "fromPortCountry")).isDisplayed());
 	}
 	
-	@Test(priority = 3, groups = "tests")
-	public void verifyProductNameInCart() {
-		Assert.assertTrue(ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT_CONTAINS, 
-				FileUtil.readFromPropertyFile(filePath, "productName")).isDisplayed());
+	@Test(priority = 3, groups = "schedule_tests")
+	public void toPortNameTest() throws Exception {
+		Assert.assertTrue(ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT, 
+				FileUtil.readFromPropertyFile(filePath, "toPortName")).isDisplayed());
 	}
 	
-	@Test(priority = 4, groups = "tests")
-	public void verifyProductSizeInCart() {
-		Assert.assertTrue(ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT_CONTAINS, 
-				FileUtil.readFromPropertyFile(filePath, "productSize")).isDisplayed());
+	@Test(priority = 4, groups = "schedule_tests")
+	public void toPortCountryTest() throws Exception {
+		Assert.assertTrue(ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT, 
+				FileUtil.readFromPropertyFile(filePath, "toPortCountry")).isDisplayed());
 	}
 	
-	@Test(priority = 5, groups = "tests")
-	public void verifyProductPriceInCart() {
-		Assert.assertTrue(ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT_CONTAINS, 
-				FileUtil.readFromPropertyFile(filePath, "productPrice")).isDisplayed());
+	@Test(priority = 5, groups = "schedule_tests")
+	public void shareSchedulesTest() throws Exception {
+		schedulesPage.shareSchedules("Gmail");
+		AndroidUtils.getAndroidDriver().pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+		AndroidUtils.getAndroidDriver().pressKey(new KeyEvent().withKey(AndroidKey.BACK));
 	}
 	
-	@Test(priority = 6, groups = "tests")
-	public void removeProductFromCart() {
-		ElementUtils.getElement(LocatorStrategy.ANDROID_LOCATOR_STRATEGY_TEXT_CONTAINS, "Remove").click();
-	}
+	
+	
+	
+	
 
 }

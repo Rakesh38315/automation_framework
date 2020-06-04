@@ -9,14 +9,7 @@ import io.appium.java_client.touch.offset.PointOption;
 public class GestureUtils{
 	
 	private TouchAction touchAction;
-	private boolean isAndroidScrollableElementFound = false;
-	private boolean androidScrollFlag = false;
-	private String androidPageSourceBeforeScroll;
-	private String androidPageSourceAfterScroll;
-	int androidScrollCounter = 0;
-	int mScrollX = 0;
-	int mScrollY = 0;
-	int mAndroidScrollSteps = 0;
+	public int screenOffset = 100;
 	
 	public GestureUtils() {
 		touchAction = new TouchAction((PerformsTouchActions) DriverFactory.driver);
@@ -26,87 +19,16 @@ public class GestureUtils{
 		DOWN, UP, LEFT, RIGHT
 	}
 	
-	public static int getScreenWidth() {
+	public int getScreenWidth() {
 		return DriverFactory.driver.manage().window().getSize().width;
 	}
 	
-	public static int getScreenHeight() {
+	public int getScreenHeight() {
 		return DriverFactory.driver.manage().window().getSize().height;
 	}
 	
-	public void swipeByCordinates(int x1, int y1, int x2, int y2) {
-			touchAction.press(PointOption.point(x1, y1)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
-					.moveTo(PointOption.point(x2, y2)).release().perform();
+	public void swipeByCordinates(int swipeStartX, int swipeStartY, int swipeEndX, int swipeEndY) {
+			touchAction.press(PointOption.point(swipeStartX, swipeStartY)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
+					.moveTo(PointOption.point(swipeEndX, swipeEndY)).release().perform();
 	}
-	
-	public boolean androidScroll(String attributeValue, int scrollSteps) {
-		try {
-			mAndroidScrollSteps = scrollSteps;
-			setAndroidScrollFlag(attributeValue);
-			while (androidScrollFlag) {
-				if (mAndroidScrollSteps < 0)  
-					getScrollPoint(ScrollDirection.DOWN);
-				else
-					getScrollPoint(ScrollDirection.UP);
-				androidPageSourceBeforeScroll = DriverFactory.driver.getPageSource();
-				touchAction.press(PointOption.point(mScrollX, mScrollY))
-						.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
-						.moveTo(PointOption.point(mScrollX, mScrollY + mAndroidScrollSteps)).release().perform();
-				androidPageSourceAfterScroll = DriverFactory.driver.getPageSource();
-				setAndroidScrollFlag(attributeValue);
-				if (androidScrollFlag) {
-					if (isReachedToBottom()) {
-						androidScrollFlag = false;
-						isAndroidScrollableElementFound = false;
-						break;
-					}
-				}
-			}
-			System.out.println("Is Scrollable Element Found:"+isAndroidScrollableElementFound);
-			return isAndroidScrollableElementFound;	
-		} catch (Throwable e) {
-			e.printStackTrace();
-			return false;
-		}		
-	}
-	
-	public void getScrollPoint(ScrollDirection direction) {
-			mScrollX = (getScreenWidth() / 2);
-			if (direction == ScrollDirection.DOWN)
-				mScrollY =  getScreenHeight() / 2 + getScreenHeight() / 4;
-			else
-				mScrollY = getScreenHeight() / 2 - getScreenHeight() / 4;
-		}
-
-	
-	public void setAndroidScrollFlag(String scrollText) {
-		try {
-			if (DriverFactory.driver.getPageSource().contains(scrollText)) {
-				isAndroidScrollableElementFound = true;
-				androidScrollFlag = false;
-			}	
-			else
-				androidScrollFlag = true;
-		} catch (Throwable e) {
-			e.printStackTrace();
-			androidScrollFlag = false;
-		}
-	}
-	
-	public boolean isReachedToBottom() {
-		try {
-			if (androidPageSourceBeforeScroll.equals(androidPageSourceAfterScroll))
-				androidScrollCounter++;
-			else
-				androidScrollCounter = 0;
-			if (androidScrollCounter >= 3)
-				return true;
-			else
-				return false;
-		} catch (Throwable e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-
 }

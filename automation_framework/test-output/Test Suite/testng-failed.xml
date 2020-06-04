@@ -2,22 +2,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Test Suite]">
   <test thread-count="5" name="Tests(failed)">
-    <parameter name="password" value="Sarita@123"/>
+    <parameter name="appPackage" value="com.maersk.trackandtrace.maerskline"/>
+    <parameter name="appActivity" value="com.maersk.trackandtrace.ui.main.splash.SplashActivity"/>
     <parameter name="platformVersion" value="7.0"/>
-    <parameter name="userName" value="rakesh38315@gmail.com"/>
     <parameter name="deviceName" value="SM-N9208"/>
     <groups>
       <run>
-        <include name="tests"/>
+        <include name="schedule_tests"/>
       </run>
     </groups>
     <classes>
-      <class name="demo.tests.Tests">
+      <class name="demo.tests.SchedulesTests">
         <methods>
+          <include name="shareSchedulesTest"/>
           <include name="init"/>
-          <include name="removeProductFromCart"/>
         </methods>
-      </class> <!-- demo.tests.Tests -->
+      </class> <!-- demo.tests.SchedulesTests -->
     </classes>
   </test> <!-- Tests(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->

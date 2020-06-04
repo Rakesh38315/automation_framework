@@ -10,13 +10,16 @@ import io.appium.java_client.MobileElement;
 
 public class ElementUtils {
 	
+	public static int deaultTime = 10;
+	
 	public static void wait(int seconds)
 	{
-		try 
-		{
+		try {
 			Thread.sleep(1000 * seconds);
 		}
-		catch(Exception e){ }
+		catch(Exception e){ 
+			e.printStackTrace();
+		}
 	}
 	
 	public static void safeClick(int timeoutInSeconds, WebElement element) throws Exception {
@@ -33,11 +36,11 @@ public class ElementUtils {
         throw new Exception("ElementUtils.click() failed" +element);
     }
 	
-	public static void sendKeys(int timeoutInSeconds, MobileElement element, String value) throws Exception {
+	public static void sendKeys(int timeoutInSeconds, WebElement element, String value) throws Exception {
         for (int i = 0; i < timeoutInSeconds; i++) {
             try {
                 if(element.isDisplayed()) {
-                	 element.setValue(value);;
+                	((MobileElement) element).setValue(value);;
                  return;
                 }
             } catch (Exception e) {

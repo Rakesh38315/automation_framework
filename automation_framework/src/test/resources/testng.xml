@@ -6,11 +6,11 @@
     
         <parameter name = "platformVersion"   		value = "7.0" />
         <parameter name = "deviceName" 				value = "SM-N9208" />
-        <parameter name =  "userName" 				value = "" />
-        <parameter name =  "password" 			    value = "" />
+        <parameter name = "appPackage"   			value = "com.maersk.trackandtrace.maerskline" />
+        <parameter name = "appActivity" 				value = "com.maersk.trackandtrace.ui.main.splash.SplashActivity" />
         <groups>
             <run>
-                <include name = "tests" />
+                <include name = "schedule_tests" />
             </run>
         </groups>
         <packages>
@@ -18,3 +18,4 @@
         </packages>
     </test>
 </suite>
+ 

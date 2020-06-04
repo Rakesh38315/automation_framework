@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Test_Suite">
-              <span class="suite-name border-failed">Test Suite</span>
+              <span class="suite-name border-passed">Test Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods, 1 failed,   5 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Test_Suite" class="hide-methods failed suite-Test_Suite"> (hide)</a> <!-- hide-methods failed suite-Test_Suite -->
-                      <a href="#" panel-name="suite-Test_Suite" class="show-methods failed suite-Test_Suite"> (show)</a> <!-- show-methods failed suite-Test_Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Test_Suite">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite" title="demo.tests.Tests" hash-for-method="removeProductFromCart">removeProductFromCart</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Test_Suite -->
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -116,27 +102,27 @@
                     <div class="method-list-content passed suite-Test_Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite" title="demo.tests.Tests" hash-for-method="productAddToCart">productAddToCart</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite" title="demo.tests.SchedulesTests" hash-for-method="fromPortCountryTest">fromPortCountryTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite" title="demo.tests.Tests" hash-for-method="productSearch">productSearch</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite" title="demo.tests.SchedulesTests" hash-for-method="fromPortNameTest">fromPortNameTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite" title="demo.tests.Tests" hash-for-method="verifyProductNameInCart">verifyProductNameInCart</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite" title="demo.tests.SchedulesTests" hash-for-method="shareSchedulesTest">shareSchedulesTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite" title="demo.tests.Tests" hash-for-method="verifyProductPriceInCart">verifyProductPriceInCart</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite" title="demo.tests.SchedulesTests" hash-for-method="toPortCountryTest">toPortCountryTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite" title="demo.tests.Tests" hash-for-method="verifyProductSizeInCart">verifyProductSizeInCart</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite" title="demo.tests.SchedulesTests" hash-for-method="toPortNameTest">toPortNameTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Test_Suite -->
@@ -151,64 +137,45 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Test_Suite" class="panel Test_Suite">
-          <div class="suite-Test_Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">demo.tests.Tests</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="removeProductFromCart">
-                  </a> <!-- removeProductFromCart -->
-                  <span class="method-name">removeProductFromCart</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at demo.tests.Tests.removeProductFromCart(Tests.java:56)
-... Removed 25 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Test_Suite-class-failed -->
           <div class="suite-Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">demo.tests.Tests</span>
+              <span class="class-name">demo.tests.SchedulesTests</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="productAddToCart">
-                  </a> <!-- productAddToCart -->
-                  <span class="method-name">productAddToCart</span>
+                  <a name="fromPortCountryTest">
+                  </a> <!-- fromPortCountryTest -->
+                  <span class="method-name">fromPortCountryTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="productSearch">
-                  </a> <!-- productSearch -->
-                  <span class="method-name">productSearch</span>
+                  <a name="fromPortNameTest">
+                  </a> <!-- fromPortNameTest -->
+                  <span class="method-name">fromPortNameTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyProductNameInCart">
-                  </a> <!-- verifyProductNameInCart -->
-                  <span class="method-name">verifyProductNameInCart</span>
+                  <a name="shareSchedulesTest">
+                  </a> <!-- shareSchedulesTest -->
+                  <span class="method-name">shareSchedulesTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyProductPriceInCart">
-                  </a> <!-- verifyProductPriceInCart -->
-                  <span class="method-name">verifyProductPriceInCart</span>
+                  <a name="toPortCountryTest">
+                  </a> <!-- toPortCountryTest -->
+                  <span class="method-name">toPortCountryTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyProductSizeInCart">
-                  </a> <!-- verifyProductSizeInCart -->
-                  <span class="method-name">verifyProductSizeInCart</span>
+                  <a name="toPortNameTest">
+                  </a> <!-- toPortNameTest -->
+                  <span class="method-name">toPortNameTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -224,28 +191,32 @@
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Test Suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Tests&quot; preserve-order=&quot;false&quot;&gt;
-    &lt;parameter name=&quot;password&quot; value=&quot;Sarita@123&quot;/&gt;
+    &lt;parameter name=&quot;appPackage&quot; value=&quot;com.maersk.trackandtrace.maerskline&quot;/&gt;
+    &lt;parameter name=&quot;appActivity&quot; value=&quot;com.maersk.trackandtrace.ui.main.splash.SplashActivity&quot;/&gt;
     &lt;parameter name=&quot;platformVersion&quot; value=&quot;7.0&quot;/&gt;
-    &lt;parameter name=&quot;userName&quot; value=&quot;rakesh38315@gmail.com&quot;/&gt;
     &lt;parameter name=&quot;deviceName&quot; value=&quot;SM-N9208&quot;/&gt;
     &lt;groups&gt;
       &lt;run&gt;
-        &lt;include name=&quot;tests&quot;/&gt;
+        &lt;include name=&quot;schedule_tests&quot;/&gt;
       &lt;/run&gt;
     &lt;/groups&gt;
     &lt;packages&gt;
       &lt;package name=&quot;demo.*&quot;/&gt;
     &lt;/packages&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;demo.tests.Tests&quot;/&gt;
+      &lt;class name=&quot;demo.tests.SchedulesTests&quot;/&gt;
       &lt;class name=&quot;demo.utils.ElementUtils$LocatorStrategy&quot;/&gt;
+      &lt;class name=&quot;demo.utils.AndroidUtils&quot;/&gt;
       &lt;class name=&quot;demo.utils.GestureUtils$ScrollDirection&quot;/&gt;
       &lt;class name=&quot;demo.utils.DriverFactory&quot;/&gt;
+      &lt;class name=&quot;demo.utils.DriverManager&quot;/&gt;
       &lt;class name=&quot;demo.utils.GestureUtils&quot;/&gt;
       &lt;class name=&quot;demo.utils.FileUtil&quot;/&gt;
+      &lt;class name=&quot;demo.utils.AppConfig&quot;/&gt;
       &lt;class name=&quot;demo.utils.ElementUtils&quot;/&gt;
-      &lt;class name=&quot;demo.pages.ProductSearch&quot;/&gt;
-      &lt;class name=&quot;demo.pages.SignInPage&quot;/&gt;
+      &lt;class name=&quot;demo.pages.LoginPage$LoginPageObjects&quot;/&gt;
+      &lt;class name=&quot;demo.pages.SchedulesPage&quot;/&gt;
+      &lt;class name=&quot;demo.pages.LoginPage&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Tests --&gt;
 &lt;/suite&gt; &lt;!-- Test Suite --&gt;
@@ -259,7 +230,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Tests (9 classes)</span>
+                <span class="test-name">Tests (13 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -270,30 +241,26 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">tests</span>
+              <span class="test-group-name">schedule_tests</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">productAddToCart</span>
+                <span class="method-in-group-name">fromPortCountryTest</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">productSearch</span>
+                <span class="method-in-group-name">fromPortNameTest</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">removeProductFromCart</span>
+                <span class="method-in-group-name">shareSchedulesTest</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">verifyProductNameInCart</span>
+                <span class="method-in-group-name">toPortCountryTest</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">verifyProductPriceInCart</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">verifyProductSizeInCart</span>
+                <span class="method-in-group-name">toPortNameTest</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -313,36 +280,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'productSearch')
-data.setCell(0, 2, 'demo.tests.Tests')
-data.setCell(0, 3, 33966);
+data.setCell(0, 1, 'fromPortNameTest')
+data.setCell(0, 2, 'demo.tests.SchedulesTests')
+data.setCell(0, 3, 13446);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'productAddToCart')
-data.setCell(1, 2, 'demo.tests.Tests')
-data.setCell(1, 3, 11858);
+data.setCell(1, 1, 'shareSchedulesTest')
+data.setCell(1, 2, 'demo.tests.SchedulesTests')
+data.setCell(1, 3, 8861);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'removeProductFromCart')
-data.setCell(2, 2, 'demo.tests.Tests')
-data.setCell(2, 3, 11588);
+data.setCell(2, 1, 'fromPortCountryTest')
+data.setCell(2, 2, 'demo.tests.SchedulesTests')
+data.setCell(2, 3, 267);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifyProductNameInCart')
-data.setCell(3, 2, 'demo.tests.Tests')
-data.setCell(3, 3, 245);
+data.setCell(3, 1, 'toPortNameTest')
+data.setCell(3, 2, 'demo.tests.SchedulesTests')
+data.setCell(3, 3, 261);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'verifyProductPriceInCart')
-data.setCell(4, 2, 'demo.tests.Tests')
-data.setCell(4, 3, 221);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'verifyProductSizeInCart')
-data.setCell(5, 2, 'demo.tests.Tests')
-data.setCell(5, 3, 212);
+data.setCell(4, 1, 'toPortCountryTest')
+data.setCell(4, 2, 'demo.tests.SchedulesTests')
+data.setCell(4, 3, 258);
 window.suiteTableData['Test_Suite']= { tableData: data, tableDiv: 'times-div-Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 58 seconds</span>
+              <span class="suite-total-time">Total running time: 23 seconds</span>
               <div id="times-div-Test_Suite">
               </div> <!-- times-div-Test_Suite -->
             </div> <!-- times-div -->
@@ -370,48 +333,42 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">demo.utils.DriverFactory</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">setUp(7.0, SM-N9208, rakesh38315@gmail.com, Sarita@123)</span>
+                <span class="method-name">init(7.0, SM-N9208, com.maersk.trackandtrace.maerskline, com.maersk.trackandtrace.ui.main.splash.SplashAc...)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">demo.tests.Tests</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">demo.tests.SchedulesTests</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">init</span>
-                <span class="method-start">33861 ms</span>
+                <span class="method-start">32512 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">productSearch</span>
-                <span class="method-start">33923 ms</span>
+                <span class="method-name">fromPortNameTest</span>
+                <span class="method-start">32684 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">productAddToCart</span>
-                <span class="method-start">67892 ms</span>
+                <span class="method-name">fromPortCountryTest</span>
+                <span class="method-start">46134 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">verifyProductNameInCart</span>
-                <span class="method-start">79752 ms</span>
+                <span class="method-name">toPortNameTest</span>
+                <span class="method-start">46404 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">verifyProductSizeInCart</span>
-                <span class="method-start">79999 ms</span>
+                <span class="method-name">toPortCountryTest</span>
+                <span class="method-start">46666 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">verifyProductPriceInCart</span>
-                <span class="method-start">80213 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">removeProductFromCart</span>
-                <span class="method-start">80436 ms</span>
+                <span class="method-name">shareSchedulesTest</span>
+                <span class="method-start">46926 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">demo.utils.DriverFactory</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">92026 ms</span>
+                <span class="method-start">55789 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
